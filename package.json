@@ -4,7 +4,8 @@
   "description": "",
   "main": "war-server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "war-dev":"nodemon war-server.js",
+    "blackjack-dev":"nodemon blackjack-server.js"
   },
   "keywords": [],
   "author": "",
