@@ -10,18 +10,13 @@ const app = express();
 app.get('/api/randomhand', async (req, res) => {
     try {
         // Step 4: Make an API request to fetch random users
-        // const response = await axios.get('https://www.deckofcardsapi.com/api/deck/wc118ugnmhei/draw/?count=2');
+        const response = await axios.get('https://www.deckofcardsapi.com/api/deck/wc118ugnmhei/draw/?count=2');
         // OR
-        const response = await fetch('https://www.deckofcardsapi.com/api/deck/wc118ugnmhei/draw/?count=2')
-            .then(response => response.json())
         
         console.log(response.cards)
         // Step 5: Send the data back as a response
         res.json({
-            success: true,
-            message: 'Random user data fetched successfully!',
-            data: response.cards
-            // data:response.data
+            data:response.data
         });
     } catch (error) {
         // Step 6: Handle any errors that occur during the request
