@@ -4,6 +4,7 @@ const axios = require('axios')
 const path = require('path')
 const fs = require('fs')
 const bodyParser = require('body-parser')
+var number = 0
 
 app.use(bodyParser.urlencoded({ extended:true }))
 app.use(express.static('public'))
@@ -28,7 +29,19 @@ app.get('/', (req,res)=>{
 
 app.get('/game/blackjack', (req,res) => {
     const cards = getCards()
-    res.render('blackjack', { cards })
+    if(cards.length < 1){
+        number = 0
+    } else {
+        if(cards[cards.length-1][0].value == 'JACK' || cards[cards.length-1][0].value == 'KING' || cards[cards.length-1][0].value == 'QUEEN' || cards[cards.length-1][0].value == 'JACK'){
+            cards[cards.length-1][0].value = '10'
+        }else if(cards[cards.length-1][0].value == 'ACE'){
+            cards[cards.length-1][0].value = '1'
+        }else{
+            cards[cards.length-1][0].value == cards[cards.length-1][0].value
+        }
+        number = number + Number(cards[cards.length-1][0].value)
+    }
+    res.render('blackjack', { cards, number })
 })
 
 app.get('/randomhand', async (req,res)=>{

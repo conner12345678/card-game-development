@@ -7,16 +7,20 @@
 </head>
 <body>
     <h1>This is the game YAY</h1><br><br>
-    <div class="game-stuff">
+    <div class="player-game-stuff">
         <form action="/randomhand">
+            <label>Player:</label><br>
             <input type="submit", value="Hit Me">
         </form>
         <% if(cards.length < 1) { %>
             <h2>You don't have any cards yet.</h2>
         <% } else { %>
-            <img src="<%= cards[cards.length-1][0].image %>" alt="not working">
-            <% console.log(cards[cards.length-1][0].image) %>
+            <h3><%= number %> %></h3>
+            <img src="<%= cards[cards.length-1][0].image %>" alt="<%= cards[cards.length-1][0].image %>">
         <% } %>
+    </div>
+    <div class="dealer-game-stuff">
+        
     </div>
 </body>
 </html>
