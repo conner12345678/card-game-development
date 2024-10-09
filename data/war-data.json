@@ -1,0 +1,46 @@
+[
+  [
+    {
+      "code": "4H",
+      "image": "https://deckofcardsapi.com/static/img/4H.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/4H.svg",
+        "png": "https://deckofcardsapi.com/static/img/4H.png"
+      },
+      "value": "4",
+      "suit": "HEARTS"
+    },
+    {
+      "code": "AH",
+      "image": "https://deckofcardsapi.com/static/img/AH.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/AH.svg",
+        "png": "https://deckofcardsapi.com/static/img/AH.png"
+      },
+      "value": "ACE",
+      "suit": "HEARTS"
+    }
+  ],
+  [
+    {
+      "code": "6H",
+      "image": "https://deckofcardsapi.com/static/img/6H.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/6H.svg",
+        "png": "https://deckofcardsapi.com/static/img/6H.png"
+      },
+      "value": "6",
+      "suit": "HEARTS"
+    },
+    {
+      "code": "QD",
+      "image": "https://deckofcardsapi.com/static/img/QD.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/QD.svg",
+        "png": "https://deckofcardsapi.com/static/img/QD.png"
+      },
+      "value": "QUEEN",
+      "suit": "DIAMONDS"
+    }
+  ]
+]

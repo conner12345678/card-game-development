@@ -7,18 +7,32 @@ const axios = require('axios'); // Axios to make API requests
 
 // Step 2: Initialize the Express app
 const app = express();
-
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
 
 // Load tasks from JSON file
 const getCards = () => {
     const data = fs.readFileSync('./data/war-data.json', 'utf8');
-    return JSON.parse(data);
-}
+    if (!data) {
+        return [];
+    } else {
+        return JSON.parse(data);
+    };
+};
 
 const saveCards = (cards) => {
     fs.writeFileSync('./data/war-data.json', JSON.stringify(cards, null, 2));
 };
+
+// GET: Show all tasks
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.get('/warGame', (req, res) => {
+    res.render('warGame');
+});
 
 // Step 3: Create a GET route to handle API request
 app.get('/api/randomhand', async (req, res) => {
