@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+</head>
+<body>
+    <h1>This is the game YAY</h1><br><br>
+    <div class="game-stuff">
+        <form action="/randomhand">
+            <input type="submit", value="Hit Me">
+        </form>
+        <% if(cards.length < 1) { %>
+            <h2>You don't have any cards yet.</h2>
+        <% } else { %>
+            <img src="<%= cards[cards.length-1][0].image %>" alt="not working">
+            <% console.log(cards[cards.length-1][0].image) %>
+        <% } %>
+    </div>
+</body>
+</html>
