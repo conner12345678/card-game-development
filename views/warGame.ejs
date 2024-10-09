@@ -6,6 +6,22 @@
     <title>War Game</title>
 </head>
 <body>
-    
+    <div class="game-stuff">
+        <form action="/randomhand">
+            <input type="submit", value="Draw">
+        </form>
+        <% if(cards.length < 1) { %>
+            <h2>You don't have any cards yet.</h2>
+        <% } else if (cards.length == 1) { %>
+            <h1>Player 1:</h1>
+            <img src="<%= cards[cards.length-1][0].image %>" alt="not working">
+        <% } else if (cards.length >= 2) { %>
+            <h1>Player 1:</h1>
+            <img src="<%= cards[cards.length-2][0].image %>" alt="not working">
+            <br>
+            <h1>Player 2:</h1>
+            <img src="<%= cards[cards.length-1][0].image %>" alt="not working">
+        <% } %>
+    </div>
 </body>
 </html>

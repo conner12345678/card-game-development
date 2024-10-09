@@ -31,11 +31,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/warGame', (req, res) => {
-    res.render('warGame');
+    const cards = getCards()
+    res.render('warGame', { cards });
 });
 
 // Step 3: Create a GET route to handle API request
-app.get('/api/randomhand', async (req, res) => {
+app.get('/randomhand', async (req, res) => {
     const cards = getCards()
     try {
         // Step 4: Make an API request to fetch random users
@@ -44,12 +45,12 @@ app.get('/api/randomhand', async (req, res) => {
         
         console.log(response.data.cards)
         // Step 5: Send the data back as a response
-        res.json({
-            success: true,
-            message: 'Random user data fetched successfully!',
-            data: response.data
-        });
-        cards.push(response.data.cards)
+        if (cards.length >= 2){
+            cards == {}
+            cards.push(response.data.cards)
+        } else {
+            cards.push(response.data.cards)
+        }
         saveCards(cards)
     } catch (error) {
         // Step 6: Handle any errors that occur during the request
@@ -59,6 +60,7 @@ app.get('/api/randomhand', async (req, res) => {
             error: error.message
         });
     }
+    res.redirect('/warGame')
 });
 
 // Step 7: Set up the server to listen on a port

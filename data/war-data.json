@@ -1,24 +1,68 @@
 [
   [
     {
-      "code": "4H",
-      "image": "https://deckofcardsapi.com/static/img/4H.png",
+      "code": "7S",
+      "image": "https://deckofcardsapi.com/static/img/7S.png",
       "images": {
-        "svg": "https://deckofcardsapi.com/static/img/4H.svg",
-        "png": "https://deckofcardsapi.com/static/img/4H.png"
+        "svg": "https://deckofcardsapi.com/static/img/7S.svg",
+        "png": "https://deckofcardsapi.com/static/img/7S.png"
       },
-      "value": "4",
-      "suit": "HEARTS"
+      "value": "7",
+      "suit": "SPADES"
     },
     {
-      "code": "AH",
-      "image": "https://deckofcardsapi.com/static/img/AH.png",
+      "code": "2H",
+      "image": "https://deckofcardsapi.com/static/img/2H.png",
       "images": {
-        "svg": "https://deckofcardsapi.com/static/img/AH.svg",
-        "png": "https://deckofcardsapi.com/static/img/AH.png"
+        "svg": "https://deckofcardsapi.com/static/img/2H.svg",
+        "png": "https://deckofcardsapi.com/static/img/2H.png"
       },
-      "value": "ACE",
+      "value": "2",
       "suit": "HEARTS"
+    }
+  ],
+  [
+    {
+      "code": "9S",
+      "image": "https://deckofcardsapi.com/static/img/9S.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/9S.svg",
+        "png": "https://deckofcardsapi.com/static/img/9S.png"
+      },
+      "value": "9",
+      "suit": "SPADES"
+    },
+    {
+      "code": "KH",
+      "image": "https://deckofcardsapi.com/static/img/KH.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/KH.svg",
+        "png": "https://deckofcardsapi.com/static/img/KH.png"
+      },
+      "value": "KING",
+      "suit": "HEARTS"
+    }
+  ],
+  [
+    {
+      "code": "KD",
+      "image": "https://deckofcardsapi.com/static/img/KD.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/KD.svg",
+        "png": "https://deckofcardsapi.com/static/img/KD.png"
+      },
+      "value": "KING",
+      "suit": "DIAMONDS"
+    },
+    {
+      "code": "4D",
+      "image": "https://deckofcardsapi.com/static/img/4D.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/4D.svg",
+        "png": "https://deckofcardsapi.com/static/img/4D.png"
+      },
+      "value": "4",
+      "suit": "DIAMONDS"
     }
   ],
   [
