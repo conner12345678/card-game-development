@@ -4,8 +4,8 @@
   "description": "",
   "main": "war-server.js",
   "scripts": {
-    "war-dev":"nodemon war-server.js",
-    "blackjack-dev":"nodemon blackjack-server.js"
+    "start": "node war-server.js",
+    "dev": "nodemon war-server.js"
   },
   "keywords": [],
   "author": "",
