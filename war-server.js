@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 // Optional
 const axios = require('axios'); // Axios to make API requests
 
+var num = 0
+
 // Step 2: Initialize the Express app
 const app = express();
 app.use(express.static('public'));
@@ -32,6 +34,21 @@ app.get('/', (req, res) => {
 
 app.get('/warGame', (req, res) => {
     const cards = getCards()
+    if(cards.length < 1){
+        num = 0
+    } else {
+        if(cards[cards.length-1][0].value == 'JACK' || cards[cards.length-1][0].value == 'KING' || cards[cards.length-1][0].value == 'QUEEN' || cards[cards.length-1][0].value == 'JACK'){
+            cards[cards.length-1][0].value = '10'
+            saveCards(cards)
+        }else if(cards[cards.length-1][0].value == 'ACE'){
+            cards[cards.length-1][0].value = '1'
+            saveCards(cards)
+        }else{
+            cards[cards.length-1][0].value == cards[cards.length-1][0].value
+            saveCards(cards)
+        }
+        num = num + Number(cards[cards.length-1][0].value)
+    }
     res.render('warGame', { cards });
 });
 
@@ -42,12 +59,7 @@ app.get('/randomhand', async (req, res) => {
         // Step 4: Make an API request to fetch random users
         const response = await axios.get('https://www.deckofcardsapi.com/api/deck/wc118ugnmhei/draw/?count=2');
         // Step 5: Send the data back as a response
-        if (cards.length >= 2){
-            cards == {}
-            cards.push(response.data.cards)
-        } else {
-            cards.push(response.data.cards)
-        }
+        cards.push(response.data.cards)
         saveCards(cards)
     } catch (error) {
         // Step 6: Handle any errors that occur during the request
