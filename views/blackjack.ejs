@@ -7,20 +7,33 @@
 </head>
 <body>
     <h1>This is the game YAY</h1><br><br>
-    <div class="player-game-stuff">
-        <form action="/randomhand">
-            <label>Player:</label><br>
-            <input type="submit", value="Hit Me">
-        </form>
-        <% if(cards.length < 1) { %>
+    <div class="player-1-game-stuff">
+        <% if(turn == 0){ %>
+            <form action="/randomhand/p1">
+                <label>Player 1:</label><br>
+                <input type="submit", value="Hit Me">
+            </form>
+        <% }else{ %>
+            <p>Its not your turn!</p>
+        <% } %>
+        <% if(pCards.length < 1) { %>
             <h2>You don't have any cards yet.</h2>
         <% } else { %>
-            <h3><%= number %> %></h3>
-            <img src="<%= cards[cards.length-1][0].image %>" alt="<%= cards[cards.length-1][0].image %>">
+            <h3><%= pNumber %> %></h3>
+            <img src="<%= pCards[pCards.length-1][0].image %>" alt="<%= pCards[pCards.length-1][0].image %>">
         <% } %>
     </div>
-    <div class="dealer-game-stuff">
-        
+    <div class="player-2-game-stuff">
+        <form action="/randomhand/p2">
+            <label>Player 2:</label><br>
+            <input type="submit", value="Hit Me">
+        </form>
+        <% if(dCards.length < 1) { %>
+            <h2>You don't have any cards yet.</h2>
+        <% } else { %>
+            <h3><%= dNumber %> %></h3>
+            <img src="<%= dCards[dCards.length-1][0].image %>" alt="<%= dCards[dCards.length-1][0].image %>">
+        <% } %>
     </div>
 </body>
 </html>

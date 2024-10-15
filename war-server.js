@@ -41,9 +41,6 @@ app.get('/randomhand', async (req, res) => {
     try {
         // Step 4: Make an API request to fetch random users
         const response = await axios.get('https://www.deckofcardsapi.com/api/deck/wc118ugnmhei/draw/?count=2');
-        // OR
-        
-        console.log(response.data.cards)
         // Step 5: Send the data back as a response
         if (cards.length >= 2){
             cards == {}
