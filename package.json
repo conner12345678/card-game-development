@@ -5,7 +5,7 @@
   "main": "war-server.js",
   "scripts": {
     "start": "node war-server.js",
-    "dev": "nodemon war-server.js"
+    "dev": "node blackjack-server.js"
   },
   "keywords": [],
   "author": "",

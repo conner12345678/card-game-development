@@ -7,10 +7,16 @@ const bodyParser = require('body-parser')
 var pNumber = 0
 var dNumber = 0
 var turn = 0
+var end = 0
+var id = "7mxggn611j3x"
 
 app.use(bodyParser.urlencoded({ extended:true }))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
+
+// function sleep(time){
+//     return new Promise((resolve) => setTimeout(resolve, time))
+// }
 
 const getPCards = () => {
     const data = fs.readFileSync(path.join(__dirname, '/data/blackjack-data.json'), 'utf8')
@@ -41,7 +47,7 @@ app.get('/', (req,res)=>{
     res.sendFile(path.join(__dirname, './public/index.html'))
 })
 
-app.get('/game/blackjack', (req,res) => {
+app.get('/game/blackjack', async (req,res) => {
     const pCards = getPCards()
     const dCards = getDCards()
     if(turn == 0){
@@ -61,6 +67,7 @@ app.get('/game/blackjack', (req,res) => {
             }
             else if(pNumber > 21){
                 pNumber = "Bust!"
+                dNumber = "You win!"
             }
         }
     }else if(turn == 1){
@@ -79,17 +86,18 @@ app.get('/game/blackjack', (req,res) => {
                 turn = 0
             }
             else if(pNumber > 21){
-                pNumber = "Bust!"
+                dNumber = "Bust!"
+                pNumber = 'You win!'
             }
         }
     }
-    res.render('blackjack', { pCards, dCards, pNumber, dNumber, turn })
+    res.render('blackjack', { pCards, dCards, pNumber, dNumber, turn, end })
 })
 
 app.get('/randomhand/p1', async (req,res)=>{
     const cards = getPCards()
     try{
-        const response = await axios.get('https://www.deckofcardsapi.com/api/deck/7mxggn611j3x/draw/?count=1')
+        const response = await axios.get(`https://www.deckofcardsapi.com/api/deck/${id}/draw/?count=1`)
         cards.push(response.data.cards)
         savePCards(cards)
         res.redirect('/game/blackjack')
@@ -102,7 +110,7 @@ app.get('/randomhand/p1', async (req,res)=>{
 app.get('/randomhand/p2', async (req,res)=>{
     const cards = getDCards()
     try{
-        const response = await axios.get('https://www.deckofcardsapi.com/api/deck/7mxggn611j3x/draw/?count=1')
+        const response = await axios.get(`https://www.deckofcardsapi.com/api/deck/${id}/draw/?count=1`)
         cards.push(response.data.cards)
         saveDCards(cards)
         res.redirect('/game/blackjack')
@@ -110,6 +118,18 @@ app.get('/randomhand/p2', async (req,res)=>{
     catch(error){
         res.status(404).send('test failure')
     }
+})
+
+app.get('/restart', async (req,res)=>{
+    var pCards = getPCards()
+    var dCards = getPCards()
+    pCards = []
+    dCards = []
+    savePCards(pCards)
+    saveDCards(dCards)
+    const response = await axios.get('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+    id = response.data.deck_id
+    res.redirect('/game/blackjack')
 })
 
 app.listen(5000, ()=>{

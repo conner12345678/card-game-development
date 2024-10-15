@@ -14,7 +14,7 @@
                 <input type="submit", value="Hit Me">
             </form>
         <% }else{ %>
-            <p>Its not your turn!</p>
+            <p>It's not your turn!</p>
         <% } %>
         <% if(pCards.length < 1) { %>
             <h2>You don't have any cards yet.</h2>
@@ -24,10 +24,14 @@
         <% } %>
     </div>
     <div class="player-2-game-stuff">
-        <form action="/randomhand/p2">
-            <label>Player 2:</label><br>
-            <input type="submit", value="Hit Me">
-        </form>
+        <% if(turn == 1){ %>
+            <form action="/randomhand/p2">
+                <label>Player 2:</label><br>
+                <input type="submit", value="Hit Me">
+            </form>
+        <% }else{ %>
+            <p>It's not your turn!</p>
+        <% } %>
         <% if(dCards.length < 1) { %>
             <h2>You don't have any cards yet.</h2>
         <% } else { %>
