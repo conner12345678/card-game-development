@@ -262,5 +262,29 @@
       "value": "1",
       "suit": "SPADES"
     }
+  ],
+  [
+    {
+      "code": "AD",
+      "image": "https://deckofcardsapi.com/static/img/aceDiamonds.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/aceDiamonds.svg",
+        "png": "https://deckofcardsapi.com/static/img/aceDiamonds.png"
+      },
+      "value": "1",
+      "suit": "DIAMONDS"
+    }
+  ],
+  [
+    {
+      "code": "0S",
+      "image": "https://deckofcardsapi.com/static/img/0S.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/0S.svg",
+        "png": "https://deckofcardsapi.com/static/img/0S.png"
+      },
+      "value": "10",
+      "suit": "SPADES"
+    }
   ]
 ]
