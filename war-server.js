@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios'); // Axios to make API requests
 
 var num = 0
+var id = 'zt2cuykzhv7j'
 
 // Step 2: Initialize the Express app
 const app = express();
@@ -57,7 +58,7 @@ app.get('/randomhand', async (req, res) => {
     const cards = getCards()
     try {
         // Step 4: Make an API request to fetch random users
-        const response = await axios.get('https://www.deckofcardsapi.com/api/deck/zt2cuykzhv7j/draw/?count=1');
+        const response = await axios.get(`https://www.deckofcardsapi.com/api/deck/${id}/draw/?count=1`);
 
         console.log(response.data.cards)
         // Step 5: Send the data back as a response
