@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
+    <link rel="stylesheet" href="/blackjack.css">
 </head>
 <body>
     <h1>This is the game YAY</h1><br><br>
@@ -15,6 +16,13 @@
             </form>
         <% }else{ %>
             <p>It's not your turn!</p>
+        <% } %>
+        <% if(turn == 0){ %>
+            <form action="/pStand">
+                <input type="submit" value="Stand">
+            </form>
+        <% }else{ %>
+            <p></p>
         <% } %>
         <% if(pCards.length < 1) { %>
             <h2>You don't have any cards yet.</h2>
@@ -32,6 +40,13 @@
         <% }else{ %>
             <p>It's not your turn!</p>
         <% } %>
+        <%  if(turn == 1){ %>
+            <form action="/dStand">
+                <input type="submit" value="Stand">
+            </form>
+        <% }else{ %>
+            <p></p>
+        <% } %>
         <% if(dCards.length < 1) { %>
             <h2>You don't have any cards yet.</h2>
         <% } else { %>
@@ -39,5 +54,9 @@
             <img src="<%= dCards[dCards.length-1][0].image %>" alt="<%= dCards[dCards.length-1][0].image %>">
         <% } %>
     </div>
+
+    <form action="/restart">
+        <input type="submit" value="Restart">
+    </form>
 </body>
 </html>

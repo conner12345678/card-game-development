@@ -7,8 +7,15 @@ const bodyParser = require('body-parser')
 var pNumber = 0
 var dNumber = 0
 var turn = 0
-var end = 0
-var id = "7mxggn611j3x"
+var end1 = 0
+var end2 = 0
+
+const random_id = async () => {
+    const data = await axios.get('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+    return data.data.deck_id
+}
+const rand_id = random_id()
+var id = rand_id
 
 app.use(bodyParser.urlencoded({ extended:true }))
 app.use(express.static('public'))
@@ -63,7 +70,12 @@ app.get('/game/blackjack', async (req,res) => {
                     pCards[pCards.length-1][0].value == pCards[pCards.length-1][0].value
                 }
                 pNumber = pNumber + Number(pCards[pCards.length-1][0].value)
-                turn = 1
+                if(end2 == 0){
+                    turn = 1
+                }
+                else{
+                    turn = 0
+                }
             }
             else if(pNumber > 21){
                 pNumber = "Bust!"
@@ -83,7 +95,11 @@ app.get('/game/blackjack', async (req,res) => {
                     dCards[dCards.length-1][0].value == dCards[dCards.length-1][0].value
                 }
                 dNumber = dNumber + Number(dCards[dCards.length-1][0].value)
-                turn = 0
+                if(end1 == 0){
+                    turn = 0
+                }else{
+                    turn = 1
+                }
             }
             else if(pNumber > 21){
                 dNumber = "Bust!"
@@ -91,7 +107,7 @@ app.get('/game/blackjack', async (req,res) => {
             }
         }
     }
-    res.render('blackjack', { pCards, dCards, pNumber, dNumber, turn, end })
+    res.render('blackjack', { pCards, dCards, pNumber, dNumber, turn, end1, end2 })
 })
 
 app.get('/randomhand/p1', async (req,res)=>{
@@ -120,11 +136,54 @@ app.get('/randomhand/p2', async (req,res)=>{
     }
 })
 
+app.get('/pStand', (req,res)=>{
+    if(end1 == 0){
+        end1 = 1
+    }
+    if(end1 + end2 == 2){
+        if(pNumber > dNumber){
+            pNumber = 'You win!'
+            dNumber = 'You lose!'
+        }else{
+            dNumber = 'You win!'
+            pNumber = 'You lose!'
+        }
+    }
+    if(turn == 0){
+        turn = 1
+    }else{
+        turn = 0
+    }
+    res.redirect('/game/blackjack')
+})
+
+app.get('/dStand', (req,res)=>{
+    if(end2 == 0){
+        end2 = 1
+    }
+    if(end1 + end2 == 2){
+        if(pNumber > dNumber){
+            pNumber = 'You win!'
+            dNumber = 'You lose!'
+        }else{
+            dNumber = 'You win!'
+            pNumber = 'You lose!'
+        }
+    }
+    if(turn == 0){
+        turn = 1
+    }else{
+        turn = 0
+    }
+    res.redirect('/game/blackjack')
+})
+
 app.get('/restart', async (req,res)=>{
     var pCards = getPCards()
     var dCards = getPCards()
     pCards = []
     dCards = []
+    turn = 0
     savePCards(pCards)
     saveDCards(dCards)
     const response = await axios.get('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
