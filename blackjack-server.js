@@ -21,10 +21,6 @@ app.use(bodyParser.urlencoded({ extended:true }))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
-// function sleep(time){
-//     return new Promise((resolve) => setTimeout(resolve, time))
-// }
-
 const getPCards = () => {
     const data = fs.readFileSync(path.join(__dirname, '/data/blackjack-data.json'), 'utf8')
     // console.log(data)
