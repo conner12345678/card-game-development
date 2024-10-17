@@ -4,7 +4,7 @@
   "description": "",
   "main": "war-server.js",
   "scripts": {
-    "start": "node war-server.js",
+    "start": "node merge-server.js",
     "dev": "node merge-server.js"
   },
   "keywords": [],
