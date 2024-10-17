@@ -1,1 +1,50 @@
-[]
+[
+  [
+    {
+      "code": "6H",
+      "image": "https://deckofcardsapi.com/static/img/6H.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/6H.svg",
+        "png": "https://deckofcardsapi.com/static/img/6H.png"
+      },
+      "value": "6",
+      "suit": "HEARTS"
+    }
+  ],
+  [
+    {
+      "code": "9D",
+      "image": "https://deckofcardsapi.com/static/img/9D.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/9D.svg",
+        "png": "https://deckofcardsapi.com/static/img/9D.png"
+      },
+      "value": "9",
+      "suit": "DIAMONDS"
+    }
+  ],
+  [
+    {
+      "code": "9S",
+      "image": "https://deckofcardsapi.com/static/img/9S.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/9S.svg",
+        "png": "https://deckofcardsapi.com/static/img/9S.png"
+      },
+      "value": "9",
+      "suit": "SPADES"
+    }
+  ],
+  [
+    {
+      "code": "5H",
+      "image": "https://deckofcardsapi.com/static/img/5H.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/5H.svg",
+        "png": "https://deckofcardsapi.com/static/img/5H.png"
+      },
+      "value": "5",
+      "suit": "HEARTS"
+    }
+  ]
+]

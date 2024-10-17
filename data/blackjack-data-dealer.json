@@ -1,1 +1,38 @@
-[]
+[
+  [
+    {
+      "code": "8C",
+      "image": "https://deckofcardsapi.com/static/img/8C.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/8C.svg",
+        "png": "https://deckofcardsapi.com/static/img/8C.png"
+      },
+      "value": "8",
+      "suit": "CLUBS"
+    }
+  ],
+  [
+    {
+      "code": "5D",
+      "image": "https://deckofcardsapi.com/static/img/5D.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/5D.svg",
+        "png": "https://deckofcardsapi.com/static/img/5D.png"
+      },
+      "value": "5",
+      "suit": "DIAMONDS"
+    }
+  ],
+  [
+    {
+      "code": "QS",
+      "image": "https://deckofcardsapi.com/static/img/QS.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/QS.svg",
+        "png": "https://deckofcardsapi.com/static/img/QS.png"
+      },
+      "value": "QUEEN",
+      "suit": "SPADES"
+    }
+  ]
+]

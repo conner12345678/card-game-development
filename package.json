@@ -5,7 +5,7 @@
   "main": "war-server.js",
   "scripts": {
     "start": "node war-server.js",
-    "dev": "node war-server.js"
+    "dev": "node merge-server.js"
   },
   "keywords": [],
   "author": "",
