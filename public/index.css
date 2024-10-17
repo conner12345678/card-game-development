@@ -15,3 +15,19 @@ body {
 flex: 1;
 text-align: center;
 }
+
+.gameButton {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Add some space above the form */
+}
+
+/* Style for the submit button */
+.gameButton input[type="submit"] {
+    background-color: grey; /* Green background */
+    padding: 10px 20px; /* Top and bottom padding, left and right padding */
+    border: none; /* Remove borders */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px;
+}
