@@ -58,13 +58,13 @@
                 <h1>Player 2 Wins</h1>
             <% } else { %>
                 <h1>Tie! Draw More Cards</h1>
-                <form action="/randomhand">
+                <form action="/randomhand" class="gameButton">
                     <input type="submit" value="Draw More Cards">
                 </form>
             <% } %>
         <% } %>
     </div>
-    <form action="/restartGame">
+    <form action="/restartGame" class="gameButton">
         <input type="submit" value="Restart">
     </form>
     <script src="/js/warGame.js"></script>
