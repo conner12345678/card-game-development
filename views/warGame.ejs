@@ -9,7 +9,7 @@
 <body>
     <div id="game">
         <% if(cards.length < 1) { %>
-            <a href="/randomhand" onclick="cardMove()">
+            <a href="/randomhand">
                 <img src="/images/backCard.png" alt="">
             </a>
             <div id="main">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         <% } else if ((cards.length % 2) == 1) { %>
-            <a href="/randomhand" onclick="cardMove()">
+            <a href="/randomhand">
                 <img src="/images/backCard.png" alt="">
             </a>
             <div id="main">
